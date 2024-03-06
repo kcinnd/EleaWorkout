@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function changeTab(selectedWeek) {
-    // Update tabs' active state
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach((tab, index) => {
         if (index === selectedWeek - 1) {
@@ -13,11 +12,9 @@ function changeTab(selectedWeek) {
         }
     });
 
-    // Clear existing day buttons
     const daysContainer = document.getElementById('days-container');
     daysContainer.innerHTML = '';
 
-    // Add new day buttons for the selected week
     for (let i = 1; i <= 5; i++) {
         const dayButton = document.createElement('button');
         dayButton.textContent = `Day ${i}`;
@@ -28,7 +25,6 @@ function changeTab(selectedWeek) {
 }
 
 function selectDay(day) {
-    // Update day buttons' active state
     const dayButtons = document.querySelectorAll('.day-button');
     dayButtons.forEach((button, index) => {
         if (index === day - 1) {
@@ -39,41 +35,113 @@ function selectDay(day) {
     });
 
     const workoutDetails = document.getElementById('workout-details');
-    workoutDetails.innerHTML = ''; // Clear existing workout details
+    workoutDetails.innerHTML = '';
 
-    if (day === 1) {
-        // Add Day 1 workout details
-        const workoutHTML = `
-            <div class="workout-title">Day 1: Legs (Quad Dominant + Abs)</div>
-            <div class="workout-section">
-                <div class="workout-section-title">Main Lift</div>
-                <ul>
-                    <li class="workout-item">Back Squats (4 sets of 4-6 reps)</li>
-                </ul>
-            </div>
-            <div class="workout-section">
-                <div class="workout-section-title">Superset 1</div>
-                <ul>
-                    <li class="workout-item">Bulgarian Split Squats (3 sets of 8-10 reps each leg)</li>
-                    <li class="workout-item">Goblet Squats (3 sets of 12 reps)</li>
-                </ul>
-            </div>
-            <div class="workout-section">
-                <div class="workout-section-title">Superset 2</div>
-                <ul>
-                    <li class="workout-item">Leg Press (3 sets of 10-12 reps)</li>
-                    <li class="workout-item">Front Squats (3 sets of 6-8 reps)</li>
-                </ul>
-            </div>
-            <div class="workout-section">
-                <div class="workout-section-title">Superset 3</div>
-                <ul>
-                    <li class="workout-item">Leg Extensions (3 sets of 12-15 reps)</li>
-                    <li class="workout-item">Hanging Leg Raises (3 sets of 10-15 reps)</li>
-                </ul>
-            </div>
-        `;
-        workoutDetails.innerHTML = workoutHTML;
+    let workoutHTML = '';
+
+    switch (day) {
+        case 1:
+            workoutHTML = `
+                <div class="workout-title">Day 1: Legs (Quad Dominant + Abs)</div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Main Lift</div>
+                    <ul>
+                        <li class="workout-item">Back Squats (4 sets of 4-6 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 1</div>
+                    <ul>
+                        <li class="workout-item">Bulgarian Split Squats (3 sets of 8-10 reps each leg)</li>
+                        <li class="workout-item">Goblet Squats (3 sets of 12 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 2</div>
+                    <ul>
+                        <li class="workout-item">Leg Press (3 sets of 10-12 reps)</li>
+                        <li class="workout-item">Front Squats (3 sets of 6-8 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 3</div>
+                    <ul>
+                        <li class="workout-item">Leg Extensions (3 sets of 12-15 reps)</li>
+                        <li class="workout-item">Hanging Leg Raises (3 sets of 10-15 reps)</li>
+                    </ul>
+                </div>
+            `;
+            break;
+
+        case 2:
+            workoutHTML = `
+                <div class="workout-title">Day 2: Push (Chest, Shoulders, Triceps)</div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Main Lift</div>
+                    <ul>
+                        <li class="workout-item">Bench Press (4 sets of 4-6 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 1</div>
+                    <ul>
+                        <li class="workout-item">Incline Dumbbell Press (3 sets of 8-10 reps)</li>
+                        <li class="workout-item">Dumbbell Flyes (3 sets of 12 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 2</div>
+                    <ul>
+                        <li class="workout-item">Push-Ups (3 sets to failure)</li>
+                        <li class="workout-item">Cable Crossover (3 sets of 10-12 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Tri-set</div>
+                    <ul>
+                        <li class="workout-item">Dumbbell Shoulder Press (3 sets of 8-10 reps)</li>
+                        <li class="workout-item">Lateral Raises (3 sets of 12-15 reps)</li>
+                        <li class="workout-item">Tricep Dips (3 sets to failure)</li>
+                    </ul>
+                </div>
+            `;
+            break;
+
+        case 3:
+            workoutHTML = `
+                <div class="workout-title">Day 3: Pull (Back, Biceps)</div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 1</div>
+                    <ul>
+                        <li class="workout-item">Pull-Ups (3 sets to failure)</li>
+                        <li class="workout-item">Bent Over Rows (3 sets of 8-10 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 2</div>
+                    <ul>
+                        <li class="workout-item">Single-Arm Dumbbell Rows (3 sets of 10-12 reps each side)</li>
+                        <li class="workout-item">Face Pulls (3 sets of 12-15 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 3</div>
+                    <ul>
+                        <li class="workout-item">Hammer Curls (3 sets of 10-12 reps)</li>
+                        <li class="workout-item">Barbell Curls (3 sets of 8-10 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 4</div>
+                    <ul>
+                        <li class="workout-item">Cable Row (3 sets of 15 reps)</li>
+                        <li class="workout-item">Cable Curls (3 sets of 20 reps)</li>
+                    </ul>
+                </div>
+            `;
+            break;
+        // You can add more cases for other days as needed
     }
-    // Corrected: This closing bracket ends the selectDay function
+
+    workoutDetails.innerHTML = workoutHTML;
 }
