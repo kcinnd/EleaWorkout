@@ -1,4 +1,3 @@
-// Initial setup: select the first tab by default
 document.addEventListener('DOMContentLoaded', function() {
     changeTab(1);
 });
