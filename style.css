@@ -1,0 +1,90 @@
+body {
+    background-color: #0a0a0a;
+    font-family: 'Audiowide', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#tabs-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #1f1f1f;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #7fff00;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(127, 255, 0, 0.4), rgba(255, 0, 255, 0.4));
+    z-index: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+    border-radius: 5px;
+}
+
+.tab:hover::before, .tab.active::before {
+    opacity: 1;
+}
+
+.tab:hover, .tab.active {
+    color: #ffffff;
+}
+
+#days-container {
+    display: flex;
+    gap: 10px;
+}
+
+.day-button {
+    background-color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #ff00ff;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.day-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 255, 0.4), rgba(0, 255, 255, 0.4));
+    z-index: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+    border-radius: 5px;
+}
+
+.day-button:hover::before, .day-button.active::before {
+    opacity: 1;
+}
+
+.day-button:hover, .day-button.active {
+    color: #ffffff;
+}
