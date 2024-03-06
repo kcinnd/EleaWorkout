@@ -140,7 +140,79 @@ function selectDay(day) {
                 </div>
             `;
             break;
-        // You can add more cases for other days as needed
+            
+        case 4:
+            workoutHTML = `
+                <div class="workout-title">Day 4: Legs (Hamstring & Glute Dominant)</div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Main Lift</div>
+                    <ul>
+                        <li class="workout-item">Deadlifts (4 sets of 4-6 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 1</div>
+                    <ul>
+                        <li class="workout-item">Barbell Hip Thrusts (3 sets of 8-10 reps)</li>
+                        <li class="workout-item">Walking Lunges (3 sets of 12 reps each leg)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 2</div>
+                    <ul>
+                        <li class="workout-item">Romanian Deadlifts (3 sets of 8-10 reps)</li>
+                        <li class="workout-item">Good Mornings (3 sets of 10-12 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 3</div>
+                    <ul>
+                        <li class="workout-item">Leg Curls (3 sets of 12-15 reps)</li>
+                        <li class="workout-item">Calf Raises (3 sets of 15-20 reps)</li>
+                    </ul>
+                </div>
+            `;
+            break;
+        case 5:
+            workoutHTML = `
+                <div class="workout-title">Day 5: Arms & Shoulders + Abs</div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Main Lift</div>
+                    <ul>
+                        <li class="workout-item">Overhead Press (4 sets of 4-6 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 1</div>
+                    <ul>
+                        <li class="workout-item">Skull Crushers (3 sets of 8-10 reps)</li>
+                        <li class="workout-item">EZ Bar Curl (3 sets of 8-10 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 2</div>
+                    <ul>
+                        <li class="workout-item">Arnold Press (3 sets of 8-10 reps)</li>
+                        <li class="workout-item">Reverse Flyes (3 sets of 12-15 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Superset 3</div>
+                    <ul>
+                        <li class="workout-item">Concentration Curls (3 sets of 10-12 reps each arm)</li>
+                        <li class="workout-item">Tricep Overhead Extension (3 sets of 10-12 reps)</li>
+                    </ul>
+                </div>
+                <div class="workout-section">
+                    <div class="workout-section-title">Ab Circuit</div>
+                    <ul>
+                        <li class="workout-item">Planks (3 sets of 1 min hold)</li>
+                        <li class="workout-item">Russian Twists (3 sets of 15 reps each side)</li>
+                        <li class="workout-item">Ab Wheel Rollouts (3 sets of 10-12 reps)</li>
+                    </ul>
+                </div>
+            `;
+            break;
     }
 
     workoutDetails.innerHTML = workoutHTML;
