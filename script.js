@@ -39,6 +39,42 @@ function selectDay(day) {
         }
     });
 
-    // Here you can add functionality to display the workout for the selected day
-    console.log(`Workout for Day ${day} selected`);
+    const workoutDetails = document.getElementById('workout-details');
+    workoutDetails.innerHTML = ''; // Clear existing workout details
+
+    if (day === 1) {
+        // Add Day 1 workout details
+        const workoutHTML = `
+            <div class="workout-title">Day 1: Legs (Quad Dominant + Abs)</div>
+            <div class="workout-section">
+                <div class="workout-section-title">Main Lift</div>
+                <ul>
+                    <li class="workout-item">Back Squats (4 sets of 4-6 reps)</li>
+                </ul>
+            </div>
+            <div class="workout-section">
+                <div class="workout-section-title">Superset 1</div>
+                <ul>
+                    <li class="workout-item">Bulgarian Split Squats (3 sets of 8-10 reps each leg)</li>
+                    <li class="workout-item">Goblet Squats (3 sets of 12 reps)</li>
+                </ul>
+            </div>
+            <div class="workout-section">
+                <div class="workout-section-title">Superset 2</div>
+                <ul>
+                    <li class="workout-item">Leg Press (3 sets of 10-12 reps)</li>
+                    <li class="workout-item">Front Squats (3 sets of 6-8 reps)</li>
+                </ul>
+            </div>
+            <div class="workout-section">
+                <div class="workout-section-title">Superset 3</div>
+                <ul>
+                    <li class="workout-item">Leg Extensions (3 sets of 12-15 reps)</li>
+                    <li class="workout-item">Hanging Leg Raises (3 sets of 10-15 reps)</li>
+                </ul>
+            </div>
+        `;
+        workoutDetails.innerHTML = workoutHTML;
+    }
+    // Corrected: This closing bracket ends the selectDay function
 }
