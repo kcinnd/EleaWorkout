@@ -85,6 +85,37 @@ body {
     opacity: 1;
 }
 
+.workout-details {
+    margin-top: 20px;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(127, 255, 0, 0.5);
+    color: #00ffea;
+}
+
+.workout-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #7fff00;
+}
+
+.workout-section {
+    margin-bottom: 15px;
+}
+
+.workout-section-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+.workout-item {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
 .day-button:hover, .day-button.active {
     color: #ffffff;
 }
